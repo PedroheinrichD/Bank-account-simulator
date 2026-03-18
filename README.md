@@ -25,7 +25,7 @@ Aplicação de simulador bancário desenvolvida com HTML, CSS e JavaScript puro,
 ## 🔗 Acesse o projeto
 
 GitHub Pages:
-[https://seu-usuario.github.io/seu-repositorio/](https://seu-usuario.github.io/seu-repositorio/)
+https://pedroheinrichd.github.io/Bank-account-simulator/
 
 ## 🛠️ Tecnologias utilizadas
 
