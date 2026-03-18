@@ -73,6 +73,10 @@ button {
     background: #e74c3c;
 }
 
+#Transferir{
+    background-color: #2761ae;
+}
+
 button:hover {
     opacity: 0.9;
 }
