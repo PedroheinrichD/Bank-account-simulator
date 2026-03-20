@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<title>Bank Account Simulator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Bank Account Simulator</title>
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<h1>Conta Bancária - Pedro</h1>
+        <i class="fi fi-ss-bell"></i>
 
-<div class="saldo-area">
-<p>Saldo:</p>
-<h2 id="saldo">R$ 0</h2>
-<p id="status">Conta Zerada</p>
-</div>
+        <h1>Conta Bancária - Pedro</h1>
 
-<input 
-type="number"
-id="valor"
-placeholder="Digite um valor"
-/>
+        <div class="saldo-area">
+            <p>Saldo:</p>
+            <h2 id="saldo">R$ 0</h2>
+            <p id="status">Conta Zerada</p>
+        </div>
 
-<div class="botoes">
-    <button id="depositar">Depositar</button>
-    <button id="sacar">Sacar</button>
-    <button id="Transferir">Transferir</button>
-</div>
+        <input type="number" id="valor" placeholder="Digite um valor" />
 
-<select name="usuarios" id="select">
-    <option value="selecione">Selecione</option>
-    <option value="Maria">Maria</option>
-    <option value="Joao">João</option>
-</select>
+        <div class="botoes">
+            <button id="depositar">Depositar</button>
+            <button id="sacar">Sacar</button>
+            <button id="Transferir">Transferir</button>
+        </div>
 
-<div>
-    <ul id="mensagem"></ul>
-</div>
+        <select name="usuarios" id="select">
+            <option value="selecione">Selecione</option>
+            <option value="Maria">Maria</option>
+            <option value="Joao">João</option>
+        </select>
 
-<script src="script.js"></script>
+        <div>
+            <ul id="mensagem"></ul>
+        </div>
+
+        <script src="JS/models/contaBancaria.js"></script>
+        <script src="JS/services/bancoService.JS"></script>
+        <script src="JS/UI/UI.JS"></script>
+        <script src="JS/app.js"></script>
+        <script src="JS/eventos/eventos.js"></script>
 
 </body>
+
 </html>
