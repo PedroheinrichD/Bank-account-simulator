@@ -64,6 +64,9 @@ class ContaBancaria {
 
 
     atualizarHistorico() {
+
+        // MELHORAR O style do HISTÓRICO !! 
+
         let ul = document.querySelector('ul')
         ul.innerHTML = ''
 
