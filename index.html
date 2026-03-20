@@ -11,40 +11,64 @@
 <body>
 
     <div class="container">
+        <div class="nav-header">
+            <div class="nav-tabs">
+                <span class="active">Home</span>
+            </div>
+            <div class="profile-icon">
+            </div>
+        </div>
 
-        <i class="fi fi-ss-bell"></i>
+        <h1>Conta Bancária</h1>
 
-        <h1>Conta Bancária - Pedro</h1>
-
+        <!-- área de saldo -->
         <div class="saldo-area">
             <p>Saldo:</p>
             <h2 id="saldo">R$ 0</h2>
             <p id="status">Conta Zerada</p>
         </div>
 
-        <input type="number" id="valor" placeholder="Digite um valor" />
+        <!-- input valor -->
+        <div class="valor-input">
+            <input type="number" id="valor" placeholder="Digite um valor" />
+        </div>
 
+        <!-- botões -->
         <div class="botoes">
             <button id="depositar">Depositar</button>
             <button id="sacar">Sacar</button>
             <button id="Transferir">Transferir</button>
         </div>
 
-        <select name="usuarios" id="select">
-            <option value="selecione">Selecione</option>
-            <option value="Maria">Maria</option>
-            <option value="Joao">João</option>
-        </select>
+        <!-- select de usuários -->
+        <div class="select-transfer">
+            <select name="usuarios" id="select">
+                <option value="selecione">Selecione</option>
+                <option value="Maria">Maria</option>
+                <option value="Joao">João</option>
+            </select>
+        </div>
 
-        <div>
+        <!-- título de transações -->
+        <div class="transactions-header">
+            <h3> Últimas transações</h3>
+        </div>
+
+        <!-- lista de transações  -->
+        <div class="transaction-list">
             <ul id="mensagem"></ul>
         </div>
 
-        <script src="JS/models/contaBancaria.js"></script>
-        <script src="JS/services/bancoService.JS"></script>
-        <script src="JS/UI/UI.JS"></script>
-        <script src="JS/app.js"></script>
-        <script src="JS/eventos/eventos.js"></script>
+        <footer>
+             Transações seguras | Simulador bancário
+        </footer>
+    </div>
+
+    <script src="JS/models/contaBancaria.js"></script>
+    <script src="JS/services/bancoService.JS"></script>
+    <script src="JS/UI/UI.JS"></script>
+    <script src="JS/app.js"></script>
+    <script src="JS/eventos/eventos.js"></script>
 
 </body>
 
