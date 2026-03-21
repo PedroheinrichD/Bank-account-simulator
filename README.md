@@ -20,7 +20,7 @@ Aplicação de simulador bancário desenvolvida com HTML, CSS e JavaScript puro,
 ## 🎥 Demonstração
 
 ![Demonstração do Projeto]
-<img width="926" height="647" alt="Image" src="https://github.com/user-attachments/assets/1f014427-031a-49d3-9a54-60c774320866" />
+<img width="938" height="880" alt="Image" src="https://github.com/user-attachments/assets/cdea666a-4459-421e-97ec-555c95443239" />
 
 ## 🔗 Acesse o projeto
 
