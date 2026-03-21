@@ -64,21 +64,50 @@ class ContaBancaria {
 
 
     atualizarHistorico() {
+        let ul = document.querySelector('ul'); // Certifique-se que o seletor está correto
+        if (!ul) return;
+        ul.innerHTML = '';
 
-        // MELHORAR O style do HISTÓRICO !! 
-
-        let ul = document.querySelector('ul')
-        ul.innerHTML = ''
-
-        // percorrendo o objeto dentro do array 
-        for (let i = 0; i < this._historico.length; i++) {
-            const element = this._historico[i];
-            let newLi = document.createElement("li")
-            newLi.innerText = `${element.tipo} de R$${element.valor} - horário: ${element.data.toLocaleTimeString('pt-BR')}`
-            ul.append(newLi) // adicionando dentro da lista 
+        // Se não houver transações exibe a mensagem
+        if (this._historico.length === 0) {
+            ul.innerHTML = '<li style="color: #888; text-align: center; padding: 20px;">Nenhuma movimentação ainda.</li>';
+            return;
         }
-    }
 
+        // Percorrendo o histórico
+        this._historico.forEach(element => {
+            let newLi = document.createElement("li");
+            newLi.style.display = "flex";
+            newLi.style.justifyContent = "space-between";
+            newLi.style.alignItems = "center";
+            newLi.style.padding = "10px";
+            newLi.style.borderBottom = "1px solid #eee";
+
+            // Formatação de valores e cores
+            const valorFormatado = element.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            const isPositivo = element.tipo === 'Deposito' || element.tipo === 'Transferência recebida';
+            const corValor = isPositivo ? '#28a745' : '#dc3545';
+            const sinal = isPositivo ? '+' : '-';
+
+            // Descrição 
+            let descricao = element.tipo;
+            if (element.tipo === 'Transferência Enviada') descricao = `Enviado para ${element.destinatario}`;
+            if (element.tipo === 'Transferência recebida') descricao = `Recebido de ${element.de}`;
+
+            const horario = element.data.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+
+            newLi.innerHTML = `
+            <div style="display: flex; flex-direction: column;">
+                <span style="font-weight: bold; color: #505050;">${descricao}</span>
+                <span style="font-size: 0.85em; color: #888;">${horario}</span>
+            </div>
+            <span style="font-weight: bold; color: ${corValor};">
+                ${sinal} ${valorFormatado}
+            </span>
+        `;
+            ul.append(newLi); // adicionando 
+        });
+    }
 
     transferir(valor, destino) {
         if (isNaN(valor) || valor <= 0) return
