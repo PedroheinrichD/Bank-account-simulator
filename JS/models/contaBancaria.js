@@ -24,7 +24,7 @@ class ContaBancaria {
         this._saldo += valor
 
         // limitando as informações para não ser infinito 
-        if (this._historico.length >= 4) {
+        if (this._historico.length >= 3) {
             this._historico.shift()
         }
         this._historico.push( // adicionando historico de depósito
@@ -51,7 +51,7 @@ class ContaBancaria {
         this._saldo -= valor // tira o valor(saque) do saldo 
 
         // limitando as informações para não ser infinito 
-        if (this._historico.length >= 4) {
+        if (this._historico.length >= 3) {
             this._historico.shift()
         }
         this._historico.push(
@@ -128,7 +128,7 @@ class ContaBancaria {
 
 
         // limitando as informações para não ser infinito 
-        if (this._historico.length >= 4) {
+        if (this._historico.length >= 3) {
             this._historico.shift()
         }
 

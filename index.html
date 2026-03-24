@@ -16,6 +16,7 @@
                 <span class="active">Home</span>
             </div>
             <div class="profile-icon">
+                <img src="ASSETS/profile-icon/profile-perfil.jpg" alt="">
             </div>
         </div>
 
@@ -41,12 +42,50 @@
         </div>
 
         <!-- select de usuários -->
+        <!--
         <div class="select-transfer">
             <select name="usuarios" id="select">
                 <option value="selecione">Selecione para quem irá transferir</option>
                 <option value="Maria">Maria</option>
                 <option value="Joao">João</option>
             </select>
+        </div>
+        -->
+
+        <!--transferir novamente -->
+        <div class="profile-transfer">
+            <h3>Transferir novamente</h3>
+            <div class="accounts">
+                <button class="contact-item" data-user-id="2" data-name="Maria">
+                    <div class="profile-icon">
+                        <img src="ASSETS/profile-icon/maria-profile-icon.jpg" alt="">
+                    </div>
+                    <div class="contact-info">
+                        <strong>Maria</strong>
+                        <span>Maria@gmail.com</span>
+                    </div>
+                </button>
+
+                <button class="contact-item" data-user-id="3" data-name="Joao">
+                    <div class="profile-icon">
+                        <img src="ASSETS/profile-icon/joao-profile-icon.jpg" alt="">
+                    </div>
+                    <div class="contact-info">
+                        <strong>João</strong>
+                        <span>(11)9977298726</span>
+                    </div>
+                </button>
+
+                <button class="contact-item" data-user-id="4" data-name="Lucas">
+                    <div class="profile-icon">
+                        <img src="ASSETS/profile-icon/lucas-profile-icon.jpg" alt="">
+                    </div>
+                    <div class="contact-info">
+                        <strong>Lucas</strong>
+                        <span>422.255.320-77</span>
+                    </div>
+                </button>
+            </div>
         </div>
 
         <!-- título de transações -->
@@ -60,14 +99,14 @@
         </div>
 
         <footer>
-             Transações seguras | Simulador bancário
+            Transações seguras | Simulador bancário
         </footer>
     </div>
 
     <script src="JS/models/contaBancaria.js"></script>
-    <script src="JS/services/bancoService.JS"></script>
     <script src="JS/UI/UI.JS"></script>
     <script src="JS/app.js"></script>
+    <script src="JS/services/bancoService.JS"></script>
     <script src="JS/eventos/eventos.js"></script>
 
 </body>

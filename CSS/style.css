@@ -51,17 +51,11 @@
      padding-bottom: 0.25rem;
  }
 
- .profile-icon {
-     background: #f0f4fa;
-     width: 38px;
-     height: 38px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     border-radius: 50%;
-     color: #2c3e66;
-     font-size: 1.2rem;
-     cursor: default;
+ .profile-icon img {
+     width: 52px;
+     height: 52px;
+     border-radius: 100%;
+     object-fit: cover;
  }
 
  h1 {
@@ -217,6 +211,50 @@
      font-size: 1rem;
      font-weight: 700;
      color: #0f172a;
+ }
+
+ .profile-transfer h3 {
+     text-align: center;
+     font-size: 1rem;
+     font-weight: 700;
+     color: #0f172a;
+ }
+
+ .profile-transfer {
+     padding: 12px;
+ }
+
+ .accounts {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0.8rem 2rem 0.8rem 1.5rem;
+     gap: 15px;
+ }
+
+ .contact-item {
+     cursor: pointer;
+     border: none;
+     background-color: #ffffff00;
+     transition-property: transform;
+     transition-duration: 0.5s;
+     transform: scale(1);
+ }
+
+ .contact-item:hover {
+     transition-property: transform;
+     transition-duration: 0.5s;
+     transform: scale(1.030);
+ }
+
+ .contact-info {
+     display: flex;
+     flex-direction: column;
+ }
+
+ .contact-info span {
+     color: #4d535c;
+     font-size: 10px;
  }
 
  /* Lista de transações */
