@@ -1,4 +1,5 @@
-let input = document.querySelector('input')
+let inputValor = document.querySelector('#valor')
+let destinatarioInput= document.querySelector('#destinatario')
 let statusConta = document.querySelector('#status')
 let depositarButton = document.querySelector('#depositar')
 let sacarButton = document.querySelector('#sacar')
