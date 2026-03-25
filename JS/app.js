@@ -7,15 +7,32 @@ let transferirButton = document.querySelector('#Transferir')
 let saldo = document.querySelector("#saldo")
 
 const usuario = new ContaBancaria('Pedro', 0); // instancia da classe , criando um OBJETO
-const usuario2 = new ContaBancaria('Maria', 0);// instancia da classe , criando um OBJETO
-const usuario3 = new ContaBancaria('Joao', 0);// instancia da classe , criando um OBJETO
-const usuario4 = new ContaBancaria('Lucas', 0);// instancia da classe , criando um OBJETO
+let listaDeNomes = [
+    "Maria",
+    "Joao",
+    "Lucas",
+    "Cristiane",
+    "Dândara",
+    "David",
+    "Eclésia",
+    "Edjane",
+    "Caio",
+    "Eduardo",
+    "Kaira",
+    "Farah",
+    "Elionax",
+    "Dayse"
+]
+let contasDoBanco = {}
+for (let i = 0; i < listaDeNomes.length; i++) {
+    const element = listaDeNomes[i];
+    const id = i + 2
+    const usuario = new ContaBancaria(element, 0);
 
-let contasDoBanco = {
-    2: usuario2,
-    3: usuario3,
-    4: usuario4
+    // objeto[chave] = valor
+    contasDoBanco[id] = usuario
 }
+
 
 depositarButton.addEventListener('click', deposito)
 sacarButton.addEventListener('click', saque)
