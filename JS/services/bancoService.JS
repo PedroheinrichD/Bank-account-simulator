@@ -2,12 +2,11 @@
 // ARRUMAR O BOTAO DE TRANSFERENCIA 
 
 function Transferencia() {
+    const destinatario = Number(destinatarioInput.value) // pegando valor de input
     const valor = Number(inputValor.value) // pegando valor de input
-    
 
-    let usuarioSelecionado = valor
+    let usuarioSelecionado = destinatario
     let usuarioTransferencia = contasDoBanco[usuarioSelecionado] // acessa o objeto correspondente ex: "Maria": usuario2, ou seja, acessa o objeto que tem aquela string
-
 
     usuario.transferir(valor, usuarioTransferencia)// transferindo valor digitado para ex: "Maria"(usuario2)
     // usuario2 -> está passando o objeto completo 
@@ -16,27 +15,22 @@ function Transferencia() {
     atualizarStatus()// chamando a função para atualizar o html -> 'conta zerada'
     usuario.atualizarHistorico() // atualizando o historico de transações , depósito / saque / transferência
     inputValor.value = ''
+    destinatarioInput.value = ''
 
     console.log(usuario);
     console.log(usuario2);
     console.log(usuario3);
 }
 
-buttonProfile.forEach(button => {
-    button.addEventListener('click', () => {
-        tranferirProfile(button)
-    })
-})
 
+
+// arrumar os botões dos perfis !!!!!!!!!!!!!!!!!!!
 function tranferirProfile(elemento) {
     const valor = Number(inputValor.value) // pegando valor de input
 
-    if (valor <= 0 || isNaN(valor)) {
-        alert("Por favor, insira um valor válido para transferência.");
-        return;
-    }
 
-    let usuarioSelecionado = elemento.dataset.userId // pegando o valor do select que retorna uma string ex: "Maria"
+
+    let usuarioSelecionado = elemento.dataset.userId
     let usuarioTransferencia = contasDoBanco[Number(usuarioSelecionado)]
 
     usuario.transferir(valor, usuarioTransferencia)// transferindo valor digitado para ex: "Maria"(usuario2)
@@ -49,3 +43,9 @@ function tranferirProfile(elemento) {
 }
 
 
+
+buttonProfile.forEach(button => {
+    button.addEventListener('click', () => {
+        tranferirProfile(button)
+    })
+})
