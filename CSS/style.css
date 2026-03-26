@@ -46,7 +46,7 @@
      align-items: center;
      justify-content: center;
      flex-direction: column;
-     padding: 20px;
+     padding: 25px;
      gap: 8px;
      max-width: 540px;
      width: 50%;
@@ -57,6 +57,19 @@
      transition: all 0.2s ease;
  }
 
+ .cardconfirmacao h4 {
+     color: #343638;
+ }
+
+ .valor {
+     color: #10b981;
+     font-weight: bold;
+ }
+
+ .destino {
+     color: #3b82f6;
+     font-weight: bold;
+ }
 
  .confirmar button {
      flex: 2;

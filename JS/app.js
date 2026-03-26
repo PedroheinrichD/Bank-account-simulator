@@ -5,6 +5,7 @@ let depositarButton = document.querySelector('#depositar')
 let sacarButton = document.querySelector('#sacar')
 let saldo = document.querySelector("#saldo")
 let sectionConfirm = document.querySelector("#sectionConfirm")
+let msgConfirm = document.querySelector("#msgConfirm")
 
 const usuario = new ContaBancaria('Pedro', 0); // instancia da classe , criando um OBJETO
 let listaDeNomes = [

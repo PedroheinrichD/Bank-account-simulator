@@ -2,6 +2,7 @@ let valorNumInput
 let valorNumDestinatarioInput
 let usuarioTransferencia
 
+
 function confirmacaoModal() {
     const valor = inputValor.value // pegando valor de input
     const destinatario = destinatarioInput.value // pegando valor de input
@@ -34,6 +35,8 @@ let transferirButton = document.querySelector('#Transferir').addEventListener('c
     // se a função de confirmação for , o sistema abre o modal
     if (confirmacaoModal() === true) {
         sectionConfirm.style.display = 'flex'
+        msgConfirm.innerHTML = `Deseja enviar R$ <span class = 'valor'>${valorNumInput.toLocaleString('pt-BR')}</span> para <span class = 'destino'>${usuarioTransferencia.usuario}</span>`
+        
     }
 })
 let ButtonCancelar = document.querySelector("#nao").addEventListener('click', () => {
