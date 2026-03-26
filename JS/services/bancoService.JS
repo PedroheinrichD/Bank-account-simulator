@@ -35,7 +35,7 @@ let transferirButton = document.querySelector('#Transferir').addEventListener('c
     // se a função de confirmação for , o sistema abre o modal
     if (confirmacaoModal() === true) {
         sectionConfirm.style.display = 'flex'
-        msgConfirm.innerHTML = `Deseja enviar R$ <span class = 'valor'>${valorNumInput.toLocaleString('pt-BR')}</span> para <span class = 'destino'>${usuarioTransferencia.usuario}</span>`
+        msgConfirm.innerHTML = `Deseja enviar <span class = 'valor'>R$ ${valorNumInput.toLocaleString('pt-BR')}</span> para <span class = 'destino'>${usuarioTransferencia.usuario}</span>`
         
     }
 })
