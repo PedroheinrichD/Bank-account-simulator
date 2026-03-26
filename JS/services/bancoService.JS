@@ -24,7 +24,7 @@ function confirmacaoModal() {
         alert(`Destinatário inválido`)
         return false
     }
-    
+
     return true
 }
 
