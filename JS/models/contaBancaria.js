@@ -45,7 +45,7 @@ class ContaBancaria {
 
         // verificação onde o valor não pode ser MAIOR que o saldo disponível 
         if (valor > this._saldo) {
-            alert('saldo insuficiente')
+            alert(`Saldo insuficiente...`)
             return
         }
         this._saldo -= valor // tira o valor(saque) do saldo 
@@ -119,7 +119,7 @@ class ContaBancaria {
         }
 
         if (typeof valor !== 'number' || valor > this._saldo) {
-            alert('saldo insuficiente')
+            alert(`Saldo insuficiente...`)
             return
         }
 

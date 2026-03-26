@@ -3,8 +3,8 @@ let destinatarioInput = document.querySelector('#destinatario')
 let statusConta = document.querySelector('#status')
 let depositarButton = document.querySelector('#depositar')
 let sacarButton = document.querySelector('#sacar')
-let transferirButton = document.querySelector('#Transferir')
 let saldo = document.querySelector("#saldo")
+let sectionConfirm = document.querySelector("#sectionConfirm")
 
 const usuario = new ContaBancaria('Pedro', 0); // instancia da classe , criando um OBJETO
 let listaDeNomes = [
@@ -36,4 +36,3 @@ for (let i = 0; i < listaDeNomes.length; i++) {
 
 depositarButton.addEventListener('click', deposito)
 sacarButton.addEventListener('click', saque)
-transferirButton.addEventListener('click', Transferencia)
