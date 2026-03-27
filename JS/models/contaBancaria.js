@@ -16,8 +16,11 @@ class ContaBancaria {
 
 
     deposito(valor) { // função para depositar na contabancaria
-        if (isNaN(valor) || valor <= 0) return
-        if (typeof valor !== 'number' || valor <= 0) {
+        if (isNaN(valor) || valor <= 0) {
+            alert("Valor inválido. Digite um valor positivo.")
+            return
+        }
+        if (typeof valor !== 'number') {
             return
         }
 
@@ -38,8 +41,11 @@ class ContaBancaria {
 
 
     sacar(valor) {
-        if (isNaN(valor) || valor <= 0) return
-        if (typeof valor !== 'number' || valor <= 0) {
+        if (isNaN(valor) || valor <= 0) {
+            alert("Valor inválido. Digite um valor positivo.")
+            return
+        }
+        if (typeof valor !== 'number') {
             return
         }
 
@@ -111,6 +117,7 @@ class ContaBancaria {
 
     transferir(valor, destino) {
         if (isNaN(valor) || valor <= 0) return
+       
 
         // verificando se o destino foi criado a partir da classe ContaBancaria
         if (!(destino instanceof ContaBancaria)) {

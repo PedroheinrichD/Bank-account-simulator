@@ -29,6 +29,17 @@ function confirmacaoModal() {
     return true
 }
 
+function confirmacaoValor() {
+    const valor = inputValor.value // pegando valor de input
+
+    if (valor === '') {
+        alert(`Ops! Por favor, preencha o valor para fazer o depósito ou Saque.`)
+        return false
+    }
+    return true
+}
+
+
 
 // botões de confirmação para a transferencia 
 let transferirButton = document.querySelector('#Transferir').addEventListener('click', () => {
@@ -36,7 +47,7 @@ let transferirButton = document.querySelector('#Transferir').addEventListener('c
     if (confirmacaoModal() === true) {
         sectionConfirm.style.display = 'flex'
         msgConfirm.innerHTML = `Deseja enviar <span class = 'valor'>R$ ${valorNumInput.toLocaleString('pt-BR')}</span> para <span class = 'destino'>${usuarioTransferencia.usuario}</span>`
-        
+
     }
 })
 let ButtonCancelar = document.querySelector("#nao").addEventListener('click', () => {
