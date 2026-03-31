@@ -96,6 +96,8 @@
      display: none;
  }
 
+
+ /*------CONTEUDO PRINCIPAL DA CONTA BANCARIA ------*/
  body {
      background-image: linear-gradient(to right, #0e0f0f, #294e70);
      /*background: linear-gradient(145deg, #e9eff7 0%, #dce5f0 100%); backgroud na pagina da conta Bancaria*/

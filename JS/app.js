@@ -7,6 +7,13 @@ let saldo = document.querySelector("#saldo")
 let sectionConfirm = document.querySelector("#sectionConfirm")
 let msgConfirm = document.querySelector("#msgConfirm")
 
+// seleção modal login/register
+let btnOpenRegister = document.querySelector(".btn-for-register")// desaparece o login
+let btnOpenLogin = document.querySelector(".btn-for-login") // desaparece register
+let cardLogin = document.querySelector(".cardLogin")
+let cardRegister = document.querySelector(".cardRegister")
+
+
 const usuario = new ContaBancaria('Pedro', 0); // instancia da classe , criando um OBJETO
 let listaDeNomes = [
     "Maria",
@@ -37,3 +44,5 @@ for (let i = 0; i < listaDeNomes.length; i++) {
 
 depositarButton.addEventListener('click', deposito)
 sacarButton.addEventListener('click', saque)
+btnOpenRegister.addEventListener('click', openModalRegister)
+btnOpenLogin.addEventListener('click', openModallogin)

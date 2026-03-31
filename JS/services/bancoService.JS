@@ -83,3 +83,39 @@ buttonProfile.forEach(button => {
         tranferirProfile(button)
     })
 })
+
+
+
+
+
+// modal login/register
+
+
+/*
+Cadastro:
+Guarda dados puros (senha, saldo 0, histórico vazio)
+
+Usa o nome de usuário como chave
+
+Após cadastro, volta para tela de login
+
+
+Login:
+Busca os dados do usuário no localStorage
+
+Cria uma nova instância de ContaBancaria com os dados salvos (saldo, histórico)
+
+Mostra o conteúdo principal
+*/
+
+function openModalRegister() {
+    cardLogin.style.display = 'none'
+    cardRegister.style.display = 'block'
+}
+
+
+function openModallogin() {
+    cardLogin.style.display = 'block'
+    cardRegister.style.display = 'none'
+}
+
