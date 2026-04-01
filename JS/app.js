@@ -13,6 +13,13 @@ let btnOpenLogin = document.querySelector(".btn-for-login") // desaparece regist
 let cardLogin = document.querySelector(".cardLogin")
 let cardRegister = document.querySelector(".cardRegister")
 
+//inputs do modal de login e register
+let formRegister = document.querySelector(".formRegister")// formulario register
+
+
+let logUser = document.querySelector("#logUser") // login user
+let logPass = document.querySelector("#logPass")// login password
+let formLogin = document.querySelector(".formLogin")// formulario login
 
 const usuario = new ContaBancaria('Pedro', 0); // instancia da classe , criando um OBJETO
 let listaDeNomes = [

@@ -113,9 +113,59 @@ function openModalRegister() {
     cardRegister.style.display = 'block'
 }
 
-
 function openModallogin() {
     cardLogin.style.display = 'block'
     cardRegister.style.display = 'none'
 }
 
+// criando VAR global
+let registerUser
+let registerPass
+let registerPassConfirmation
+
+function confirmacaoRegister() {
+    let usuario  = document.querySelector("#registerUser").value // register user
+    let senha  = document.querySelector("#registerPass").value// register password
+    let confirmacao  = document.querySelector("#registerPassConfirmation").value// register password
+
+    // Validar campos vazios
+    if (usuario === '') {
+        alert(`Ops! Por favor, preencha o nome de usuário corretamente...`)
+        return false
+    }
+
+    if (senha === '' || confirmacao === '') {
+        alert(`Ops! Por favor, preencha o campo de Senha e Confirmar Senha`)
+        return false
+    }
+
+    // Validar tamanho da senha
+    if (senha.length < 8 || confirmacao.length < 8) {
+        alert(`só podem 8 caracteres ou mais para a senha!`)
+        return false
+    }
+
+    if (confirmacao !== senha) {
+        alert(`Senhas não combinam`)
+        return false
+    }
+
+    // Verificar se o usuário já existe no localStorage !!
+
+    // Se não existir: salvar no localStorage
+}
+
+
+//event preventDefault()
+formRegister.addEventListener('submit', (event) => {
+    event.preventDefault()
+    
+    // codigo register
+    confirmacaoRegister()
+})
+
+formLogin.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    // codigo login
+})
