@@ -1,6 +1,7 @@
 let valorNumInput
 let valorNumDestinatarioInput
 let usuarioTransferencia
+let usuario
 
 
 function confirmacaoModal() {
@@ -85,28 +86,9 @@ buttonProfile.forEach(button => {
 })
 
 
+// MODAL LOGIN
 
-
-
-// modal login/register
-
-
-/*
-Cadastro:
-Guarda dados puros (senha, saldo 0, histórico vazio)
-
-Usa o nome de usuário como chave
-
-Após cadastro, volta para tela de login
-
-
-Login:
-Busca os dados do usuário no localStorage
-
-Cria uma nova instância de ContaBancaria com os dados salvos (saldo, histórico)
-
-Mostra o conteúdo principal
-*/
+let userLogin
 
 function openModalRegister() {
     cardLogin.style.display = 'none'
@@ -167,8 +149,47 @@ function confirmacaoRegister() {
             historico: [],
         }
     }
-    //                                  "key" usuario -> value Input                   VALUE
-    let novoCadastro = localStorage.setItem(usuario, JSON.stringify(usuarioStorage))
+    //                      "key" usuario -> value Input                   VALUE
+    localStorage.setItem(usuario, JSON.stringify(usuarioStorage))
+    return true
+}
+
+
+
+
+function confirmacaoLogin() {
+    let usuario = document.querySelector("#logUser").value // register user
+    let senha = document.querySelector("#logpass").value // register user
+    // Validar campos vazios
+    if (usuario === '') {
+        alert(`Ops! Por favor, preencha o campo de usuário`)
+        return false
+    }
+
+    if (senha === '') {
+        alert(`Ops! Por favor, preencha o campo de Senha`)
+        return false
+    }
+
+    // Validar tamanho da senha
+    if (senha.length < 8) {
+        alert(`só podem 8 caracteres ou mais para a senha!`)
+        return false
+    }
+
+    // acessando o Cadastro do usuario
+    let getUsuario = localStorage.getItem(usuario)
+    if (getUsuario === null) {
+        alert(`Conta inexistente...`)
+        return false
+    }
+
+    // conversao 
+    userLogin = JSON.parse(getUsuario)
+    if (userLogin.usuarioCadastro.senha !== senha || userLogin.usuarioCadastro.name !== usuario) {
+        alert(`Senha ou usuario incorretos`)
+        return false
+    }
     return true
 }
 
@@ -185,4 +206,12 @@ formLogin.addEventListener('submit', (event) => {
     event.preventDefault()
 
     // codigo login
+    if (confirmacaoLogin() === true) {
+        usuario = new ContaBancaria(userLogin.usuarioCadastro.name, userLogin.usuarioCadastro.saldo); // instancia da classe , criando um OBJETO
+        console.log(usuario);
+
+
+        // REMOVER O MODAL DE LOGIN APÓS ENTRAR NA CONTA...
+        
+    }
 })
