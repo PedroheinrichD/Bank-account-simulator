@@ -151,9 +151,14 @@ function confirmacaoRegister() {
     }
     //                      "key" usuario -> value Input                   VALUE
     localStorage.setItem(usuario, JSON.stringify(usuarioStorage))
+    
+    
+    // EXIBIR um aviso de conta criada! 
+
+    
+    
     return true
 }
-
 
 
 
@@ -208,10 +213,11 @@ formLogin.addEventListener('submit', (event) => {
     // codigo login
     if (confirmacaoLogin() === true) {
         usuario = new ContaBancaria(userLogin.usuarioCadastro.name, userLogin.usuarioCadastro.saldo); // instancia da classe , criando um OBJETO
-        console.log(usuario);
 
 
         // REMOVER O MODAL DE LOGIN APÓS ENTRAR NA CONTA...
-        
+        cardLogin.style.display = 'none'
+        containerbank.style.display = 'block'
+        saldo.innerText = `R$ ${userLogin.usuarioCadastro.saldo.toLocaleString('pt-BR')}` // atualizando o valor do saldo no html
     }
 })

@@ -7,6 +7,10 @@ let saldo = document.querySelector("#saldo")
 let sectionConfirm = document.querySelector("#sectionConfirm")
 let msgConfirm = document.querySelector("#msgConfirm")
 
+
+// container principal Conta bancaria
+let containerbank = document.querySelector(".container")
+
 // seleção modal login/register
 let btnOpenRegister = document.querySelector(".btn-for-register")// desaparece o login
 let btnOpenLogin = document.querySelector(".btn-for-login") // desaparece register

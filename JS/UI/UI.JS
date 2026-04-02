@@ -1,8 +1,16 @@
+let saldoAtual
+
 function deposito() {
     if (confirmacaoValor() === true) {
         const valor = Number(inputValor.value) // pegando valor de input
         usuario.deposito(valor)  // chamando a função dentro da classe para fazer o depósito 
         saldo.innerText = `R$ ${usuario.saldo.toLocaleString('pt-BR')}` // atualizando o valor do saldo no html
+
+
+        userLogin.usuarioCadastro.saldo = usuario.saldo
+        saldoAtual = localStorage.setItem(userLogin.usuarioCadastro.name, JSON.stringify(userLogin))
+
+
         atualizarStatus() // status da conta 'conta zerada'
         usuario.atualizarHistorico() // atualizando o historico de transações , depósito / saque / transferência
         inputValor.value = ''
