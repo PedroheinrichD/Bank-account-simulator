@@ -48,6 +48,9 @@ for (let i = 0; i < listaDeNomes.length; i++) {
     contasDoBanco[id] = usuario
 }
 
+let usuarioStorage = {
+    
+}
 
 depositarButton.addEventListener('click', deposito)
 sacarButton.addEventListener('click', saque)

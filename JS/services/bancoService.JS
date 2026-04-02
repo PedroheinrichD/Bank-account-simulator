@@ -124,9 +124,9 @@ let registerPass
 let registerPassConfirmation
 
 function confirmacaoRegister() {
-    let usuario  = document.querySelector("#registerUser").value // register user
-    let senha  = document.querySelector("#registerPass").value// register password
-    let confirmacao  = document.querySelector("#registerPassConfirmation").value// register password
+    let usuario = document.querySelector("#registerUser").value // register user
+    let senha = document.querySelector("#registerPass").value// register password
+    let confirmacao = document.querySelector("#registerPassConfirmation").value// register password
 
     // Validar campos vazios
     if (usuario === '') {
@@ -151,15 +151,32 @@ function confirmacaoRegister() {
     }
 
     // Verificar se o usuário já existe no localStorage !!
+    let VerificarCadastro = localStorage.getItem(usuario)
+    if (VerificarCadastro !== null) {
+        alert(`Conta existente!`)
+        return false
+    }
 
     // Se não existir: salvar no localStorage
+    // usuarios cadastrados terao nome, senha, historico e saldo
+    usuarioStorage = {
+        usuarioCadastro: {
+            name: usuario,
+            senha: senha,
+            saldo: 0,
+            historico: [],
+        }
+    }
+    //                                  "key" usuario -> value Input                   VALUE
+    let novoCadastro = localStorage.setItem(usuario, JSON.stringify(usuarioStorage))
+    return true
 }
 
 
 //event preventDefault()
 formRegister.addEventListener('submit', (event) => {
     event.preventDefault()
-    
+
     // codigo register
     confirmacaoRegister()
 })
