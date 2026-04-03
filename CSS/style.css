@@ -64,6 +64,16 @@
      transition: all .3s ease-in-out;
  }
 
+ .msgError {
+     margin: 0rem 0rem .72rem 0rem;
+     background-color: rgba(255, 255, 255, 0);
+     border: none;
+     color: #b8b8b8;
+     display: block;
+     font-size: .71em;
+     transition: color .3s ease-out;
+ }
+
  .btn-link {
      background-color: rgba(255, 255, 255, 0);
      border: none;

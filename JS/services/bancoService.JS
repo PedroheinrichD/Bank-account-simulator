@@ -112,23 +112,23 @@ function confirmacaoRegister() {
 
     // Validar campos vazios
     if (usuario === '') {
-        alert(`Ops! Por favor, preencha o nome de usuário corretamente...`)
+        errorRegister.innerHTML = `Ops! Por favor, preencha o nome de usuário corretamente`
         return false
     }
 
     if (senha === '' || confirmacao === '') {
-        alert(`Ops! Por favor, preencha o campo de Senha e Confirmar Senha`)
+        errorRegister.innerHTML = `Ops! Por favor, preencha o campo de Senha e Confirmar Senha`
         return false
     }
 
     // Validar tamanho da senha
     if (senha.length < 8 || confirmacao.length < 8) {
-        alert(`só podem 8 caracteres ou mais para a senha!`)
+        errorRegister.innerHTML = `só podem 8 caracteres ou mais para a senha!`
         return false
     }
 
     if (confirmacao !== senha) {
-        alert(`Senhas não combinam`)
+        errorRegister.innerHTML = `Senhas não combinam`
         return false
     }
 
@@ -167,32 +167,32 @@ function confirmacaoLogin() {
     let senha = document.querySelector("#logpass").value // register user
     // Validar campos vazios
     if (usuario === '') {
-        alert(`Ops! Por favor, preencha o campo de usuário`)
+        errorLogin.innerText = `Ops! Por favor, preencha o campo de usuário`
         return false
     }
 
     if (senha === '') {
-        alert(`Ops! Por favor, preencha o campo de Senha`)
+        errorLogin.innerText = `Ops! Por favor, preencha o campo de Senha`
         return false
     }
 
     // Validar tamanho da senha
     if (senha.length < 8) {
-        alert(`só podem 8 caracteres ou mais para a senha!`)
+        errorLogin.innerText = `só podem 8 caracteres ou mais para a senha!`
         return false
     }
 
     // acessando o Cadastro do usuario
     let getUsuario = localStorage.getItem(usuario)
     if (getUsuario === null) {
-        alert(`Conta inexistente...`)
+        errorLogin.innerText = `Conta inexistente...`
         return false
     }
 
     // conversao 
     userLogin = JSON.parse(getUsuario)
     if (userLogin.usuarioCadastro.senha !== senha || userLogin.usuarioCadastro.name !== usuario) {
-        alert(`Senha ou usuario incorretos`)
+        errorLogin.innerText = `Senha ou usuario incorretos`
         return false
     }
     return true

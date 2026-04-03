@@ -6,6 +6,8 @@ let sacarButton = document.querySelector('#sacar')
 let saldo = document.querySelector("#saldo")
 let sectionConfirm = document.querySelector("#sectionConfirm")
 let msgConfirm = document.querySelector("#msgConfirm")
+let errorRegister = document.querySelector(".errorRegister")
+let errorLogin = document.querySelector(".errorLogin")
 
 
 // container principal Conta bancaria
