@@ -9,6 +9,8 @@ Aplicação de simulador bancário desenvolvida com HTML, CSS e JavaScript puro,
 * **Histórico Dinâmico:** Registro das últimas 4 transações com horário detalhado.
 * **Validação de Saldo:** Impede saques ou transferências maiores que o saldo disponível.
 * **Status de Conta:** Alerta visual quando a conta está zerada.
+* **Login e Cadastro:** Sistema de autenticação com validação de campos e verificação de usuário existente.
+* **Persistência de Dados:** Saldo e dados do usuário salvos entre sessões via localStorage.
 
 ## 🧠 Conceitos Praticados
 
@@ -16,6 +18,7 @@ Aplicação de simulador bancário desenvolvida com HTML, CSS e JavaScript puro,
 * **Encapsulamento:** Uso de atributos privados (como `_saldo` e `_historico`).
 * **Manipulação de DOM:** Criação dinâmica de elementos `<li>` para o histórico.
 * **Lógica de Array:** Uso de `push()` e `shift()` para limitar o tamanho do histórico.
+* **localStorage e JSON:** Armazenamento e recuperação de dados no navegador com serialização via JSON.stringify() e JSON.parse().
 
 ## 🎥 Demonstração
 
