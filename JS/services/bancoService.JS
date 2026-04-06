@@ -135,7 +135,7 @@ function confirmacaoRegister() {
     // Verificar se o usuário já existe no localStorage !!
     let VerificarCadastro = localStorage.getItem(usuario)
     if (VerificarCadastro !== null) {
-        alert(`Conta existente!`)
+        errorRegister.innerHTML = `Conta existente`
         return false
     }
 
@@ -151,12 +151,6 @@ function confirmacaoRegister() {
     }
     //                      "key" usuario -> value Input                   VALUE
     localStorage.setItem(usuario, JSON.stringify(usuarioStorage))
-    
-    
-    // EXIBIR um aviso de conta criada! 
-
-    
-    
     return true
 }
 
@@ -207,10 +201,11 @@ formRegister.addEventListener('submit', (event) => {
 
     // mostrar aviso de conta criada!
     if (confirmacaoRegister() === true) {
-        let registroCard =  document.querySelector('.registroCard')
-        let removerModalSucesso =  document.querySelector('.removerModalSucesso')
+        let registroCard = document.querySelector('.registroCard')
+        let removerModalSucesso = document.querySelector('.removerModalSucesso')
         registroCard.style.display = 'flex'
-        
+        errorRegister.style.display = 'none'
+
 
         removerModalSucesso.addEventListener('click', () => {
             registroCard.style.display = 'none'
