@@ -204,10 +204,22 @@ formRegister.addEventListener('submit', (event) => {
     event.preventDefault()
 
     // codigo register
-    confirmacaoRegister()
 
     // mostrar aviso de conta criada!
+    if (confirmacaoRegister() === true) {
+        let registroCard =  document.querySelector('.registroCard')
+        let removerModalSucesso =  document.querySelector('.removerModalSucesso')
+        registroCard.style.display = 'flex'
+        
+
+        removerModalSucesso.addEventListener('click', () => {
+            registroCard.style.display = 'none'
+            cardRegister.style.display = 'none'
+            cardLogin.style.display = 'block'
+        })
+    }
 })
+
 
 formLogin.addEventListener('submit', (event) => {
     event.preventDefault()
