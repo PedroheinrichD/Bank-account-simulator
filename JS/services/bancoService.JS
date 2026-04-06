@@ -205,6 +205,8 @@ formRegister.addEventListener('submit', (event) => {
 
     // codigo register
     confirmacaoRegister()
+
+    // mostrar aviso de conta criada!
 })
 
 formLogin.addEventListener('submit', (event) => {
