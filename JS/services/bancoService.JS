@@ -62,6 +62,9 @@ let ButtonConfirmar = document.querySelector("#sim").addEventListener('click', (
     // usuario2 -> está passando o objeto completo 
 
     saldo.innerText = `R$ ${usuario.saldo.toLocaleString('pt-BR')}`// atualizando o valor do saldo no html
+
+    userLogin.usuarioCadastro.saldo = usuario.saldo
+    saldoAtual = localStorage.setItem(userLogin.usuarioCadastro.name, JSON.stringify(userLogin))
     atualizarStatus()// chamando a função para atualizar o html -> 'conta zerada'
     usuario.atualizarHistorico() // atualizando o historico de transações , depósito / saque / transferência
     inputValor.value = ''
