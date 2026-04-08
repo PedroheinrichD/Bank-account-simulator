@@ -105,101 +105,167 @@
     </div>
 
 
-
+    <!-- Dashboard principal -->
     <div class="container">
-        <div class="nav-header">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7h20L12 2zm-7 6v9h2V8H5zm5 0v9h2V8h-2zm5 0v9h2V8h-2zm-9 10H4v2h16v-2H6z"/>
+                </svg>
+            </div>
             <div class="nav-tabs">
-                <span class="active">Home</span>
-            </div>
-            <div class="profile-icon">
-                <img src="ASSETS/profile-icon/profile-perfil.jpg" alt="">
-            </div>
-        </div>
-
-        <h1>Conta Bancária</h1>
-
-        <!-- área de saldo -->
-        <div class="saldo-area">
-            <p>Saldo:</p>
-            <h2 id="saldo">R$ 0</h2>
-            <p id="status">Conta Zerada</p>
-        </div>
-
-        <!-- input valor -->
-        <div class="valor-input">
-            <input type="number" id="valor" placeholder="Digite um valor" />
-            <input type="number" id="destinatario" placeholder="Digite o ID do destinatário" />
-        </div>
-
-        <section id="sectionConfirm">
-            <div class="cardconfirmacao">
-                <h3>Confirmar envio</h3>
-
-                <span id="msgConfirm"></span>
-
-                <div class="confirmar">
-                    <button id="nao">Cancelar</button>
-                    <button id="sim">Confirmar</button>
+                <div class="nav-item active">
+                    <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                    <span class="active">Home</span>
+                </div>
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                    <span>Transações</span>
+                </div>
+                <div class="nav-item">
+                    <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                    <span>Setting</span>
                 </div>
             </div>
-        </section>
-
-        <!-- botões -->
-        <div class="botoes">
-            <button id="depositar">Depositar</button>
-            <button id="sacar">Sacar</button>
-            <button id="Transferir">Transferir</button>
-        </div>
-
-        <!--transferir novamente -->
-        <div class="profile-transfer">
-            <h3>Transferir novamente</h3>
-            <div class="accounts">
-                <button class="contact-item" data-user-id="2" data-name="Maria">
-                    <div class="profile-icon">
-                        <img src="ASSETS/profile-icon/maria-profile-icon.jpg" alt="">
-                    </div>
-                    <div class="contact-info">
-                        <strong>Maria</strong>
-                        <span>ID: 2</span>
-                    </div>
-                </button>
-
-                <button class="contact-item" data-user-id="3" data-name="Joao">
-                    <div class="profile-icon">
-                        <img src="ASSETS/profile-icon/joao-profile-icon.jpg" alt="">
-                    </div>
-                    <div class="contact-info">
-                        <strong>João</strong>
-                        <span>ID: 3</span>
-                    </div>
-                </button>
-
-                <button class="contact-item" data-user-id="4" data-name="Lucas">
-                    <div class="profile-icon">
-                        <img src="ASSETS/profile-icon/lucas-profile-icon.jpg" alt="">
-                    </div>
-                    <div class="contact-info">
-                        <strong>Lucas</strong>
-                        <span>ID: 4</span>
-                    </div>
-                </button>
+            <div class="sidebar-spacer"></div>
+            <div class="sidebar-logout">
+                <svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
             </div>
         </div>
 
-        <!-- título de transações -->
-        <div class="transactions-header">
-            <h3> Últimas transações</h3>
-        </div>
+        <!-- Conteúdo principal -->
+        <div class="main-content">
 
-        <!-- lista de transações  -->
-        <div class="transaction-list">
-            <ul id="mensagem"></ul>
-        </div>
+            <!-- Topbar -->
+            <div class="nav-header">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                    <input type="text" placeholder="Search" class="search-input">
+                </div>
+                <div class="nav-header-right">
+                    <div class="bell-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                        <div class="notif-dot"></div>
+                    </div>
+                    <div class="profile-icon">
+                        <img src="ASSETS/profile-icon/profile-perfil.jpg" alt="">
+                    </div>
+                </div>
+            </div>
 
-        <footer>
-            Transações seguras | Simulador bancário
-        </footer>
+            <!-- Saldo -->
+            <div class="saldo-area">
+                <p>Your Balance</p>
+                <h2 id="saldo">R$ 0,00</h2>
+                <p id="status">Conta Zerada</p>
+            </div>
+
+            <!-- Cards de ação -->
+            <div class="action-cards">
+                <div class="action-card" id="card-depositar">
+                    <div class="action-icon">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 44h12v4H8zm0-8h12v4H8zm0-8h12v4H8zM44 8H20c-2.2 0-4 1.8-4 4v8h4V12h24v40H20V40h-4v12c0 2.2 1.8 4 4 4h24c2.2 0 4-1.8 4-4V12c0-2.2-1.8-4-4-4zm-8 22l-8-8-3 3 5 5H8v4h22l-5 5 3 3 8-8z"/>
+                        </svg>
+                    </div>
+                    <span>Deposit</span>
+                </div>
+                <div class="action-card" id="card-transferir">
+                    <div class="action-icon">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M44 20l-3 3 5 5H16v4h30l-5 5 3 3 10-10zm-24 16l3-3-5-5h30v-4H18l5-5-3-3-10 10z"/>
+                        </svg>
+                    </div>
+                    <span>Transfer</span>
+                </div>
+                <div class="action-card" id="card-sacar">
+                    <div class="action-icon">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 8h40c2.2 0 4 1.8 4 4v8H8v-8c0-2.2 1.8-4 4-4zm-4 16h48v32c0 2.2-1.8 4-4 4H12c-2.2 0-4-1.8-4-4V24zm20 16v-4h8v4h6l-10 10-10-10h6z"/>
+                        </svg>
+                    </div>
+                    <span>Withdraw</span>
+                </div>
+            </div>
+
+            <!-- Input valor -->
+            <div class="valor-input">
+                <input type="number" id="valor" placeholder="Digite um valor" />
+                <input type="number" id="destinatario" placeholder="Digite o ID do destinatário" />
+            </div>
+
+            <!-- Modal confirmação -->
+            <section id="sectionConfirm">
+                <div class="cardconfirmacao">
+                    <h3>Confirmar envio</h3>
+                    <span id="msgConfirm"></span>
+                    <div class="confirmar">
+                        <button id="nao">Cancelar</button>
+                        <button id="sim">Confirmar</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Botões -->
+            <div class="botoes">
+                <button id="depositar">Depositar</button>
+                <button id="sacar">Sacar</button>
+                <button id="Transferir">Transferir</button>
+            </div>
+
+            <!-- Transferir novamente -->
+            <div class="profile-transfer">
+                <h3>Transferir novamente</h3>
+                <div class="accounts">
+                    <button class="contact-item" data-user-id="2" data-name="Maria">
+                        <div class="profile-icon">
+                            <img src="ASSETS/profile-icon/maria-profile-icon.jpg" alt="">
+                        </div>
+                        <div class="contact-info">
+                            <strong>Maria</strong>
+                            <span>ID: 2</span>
+                        </div>
+                    </button>
+                    <button class="contact-item" data-user-id="3" data-name="Joao">
+                        <div class="profile-icon">
+                            <img src="ASSETS/profile-icon/joao-profile-icon.jpg" alt="">
+                        </div>
+                        <div class="contact-info">
+                            <strong>João</strong>
+                            <span>ID: 3</span>
+                        </div>
+                    </button>
+                    <button class="contact-item" data-user-id="4" data-name="Lucas">
+                        <div class="profile-icon">
+                            <img src="ASSETS/profile-icon/lucas-profile-icon.jpg" alt="">
+                        </div>
+                        <div class="contact-info">
+                            <strong>Lucas</strong>
+                            <span>ID: 4</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Últimas transações -->
+            <div class="transactions-header">
+                <h3>Últimas transações</h3>
+                <span class="see-all">Ver todas &rsaquo;</span>
+            </div>
+
+            <div class="transaction-list">
+                <ul id="mensagem"></ul>
+            </div>
+
+            <footer>
+                Transações seguras | Simulador bancário
+            </footer>
+
+        </div>
     </div>
 
     <script src="JS/models/contaBancaria.js"></script>
