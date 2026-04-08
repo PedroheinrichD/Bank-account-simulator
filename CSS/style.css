@@ -1,620 +1,889 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     font-family: 'Inter', sans-serif;
- }
-
- .cardLogin,
- .cardRegister {
-     box-shadow: 1px 1px 15px;
-     border-radius: 10px;
-     width: 400px;
-     padding: 2.5rem 2rem;
-     text-align: center;
-     background: #2a2b38;
- }
-
- .registroCard {
-     z-index: 999;
-     display: none;
-     justify-content: center;
-     align-items: center;
-     position: fixed;
-     top: 0;
-     left: 0;
-     height: 100vh;
-     width: 99vw;
-     background: rgba(0, 0, 0, 0.4);
- }
-
- .cardMSG {
-     z-index: 0;
-     display: flex;
-     justify-content: space-evenly;
-     align-items: center;
-     padding: 15px;
-     gap: 8px;
-     max-width: 370px;
-     width: 85%;
-     background-color: #232531;
-     border-radius: 12px;
-     box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
-     overflow: hidden;
-     transition: all 0.2s ease;
- }
-
- .sucessoLogo img {
-     width: 46px;
-     height: 46px;
- }
-
- .sucessoLogo {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     padding: 2px;
-     background-color: #2e303c;
-     border-radius: 15px;
- }
-
- .removerModalSucesso {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     width: 46px;
-     height: 46px;
-     border-radius: 15px;
- }
-
- .removerModalSucesso:hover {
-     cursor: pointer;
-     background-color: #2e303c;
- }
-
- .removerModalSucesso img {
-     width: 80px;
- }
-
- .cardMSG h3 {
-     width: 169px;
-     font-size: 16px;
-     font-weight: 100;
-     color: #fff;
- }
-
- .cardMSG h4 {
-     color: #626474;
-     font-size: 12px;
-     font-weight: lighter;
- }
-
- /*Inputs*/
- .field {
-     margin-top: .5rem;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     gap: .5em;
-     background-color: #1f2029;
-     border-radius: 4px;
-     padding: .5em 1em;
- }
-
- .input-icon {
-     height: 1em;
-     width: 1em;
-     fill: #ffeba7;
- }
-
- .input-field {
-     background: none;
-     border: none;
-     outline: none;
-     width: 100%;
-     color: #d3d3d3;
- }
-
- /*Text*/
- .title {
-     margin-bottom: 1rem;
-     font-size: 1.5em;
-     font-weight: 500;
-     color: #f5f5f5;
- }
-
- /*Buttons*/
- .btn {
-     margin: 1rem;
-     border: none;
-     border-radius: 4px;
-     font-weight: bold;
-     font-size: .8em;
-     text-transform: uppercase;
-     padding: 0.6em 1.2em;
-     background-color: #ffeba7;
-     color: #5e6681;
-     box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
-     transition: all .3s ease-in-out;
- }
-
- .msgError {
-     margin: 0rem 0rem .72rem 0rem;
-     background-color: rgba(255, 255, 255, 0);
-     border: none;
-     color: #b8b8b8;
-     display: block;
-     font-size: .71em;
-     transition: color .3s ease-out;
- }
-
- .btn-link {
-     background-color: rgba(255, 255, 255, 0);
-     border: none;
-     color: #f5f5f5;
-     display: block;
-     font-size: .75em;
-     transition: color .3s ease-out;
- }
-
- /*Hover & focus*/
- .field input:focus::placeholder {
-     opacity: 0;
-     transition: opacity .3s;
- }
-
- .btn:hover {
-     background-color: #5e6681;
-     color: #ffeba7;
-     box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
- }
-
- .btn-link:hover {
-     color: #ffeba7;
- }
-
-
-
- /*------cardRegister------*/
- .cardRegister {
-     display: none;
- }
-
-
- /*------CONTEUDO PRINCIPAL DA CONTA BANCARIA ------*/
- body {
-     background-image: linear-gradient(to right, #0e0f0f, #294e70);
-     /*background: linear-gradient(145deg, #e9eff7 0%, #dce5f0 100%); backgroud na pagina da conta Bancaria*/
-     min-height: 100vh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     padding: 2rem 1rem;
- }
-
- /* Container principal  */
- .container {
-     display: none;
-     /*removendo para visualizar a tela de login*/
-     max-width: 540px;
-     width: 100%;
-     background: rgba(255, 255, 255, 0.98);
-     border-radius: 2.5rem;
-     box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
-     overflow: hidden;
-     transition: all 0.2s ease;
- }
-
- /*Card de Confirmação para transações */
-
- #sectionConfirm {
-     z-index: 999;
-     display: none;
-     justify-content: center;
-     align-items: center;
-     position: fixed;
-     top: 0;
-     left: 0;
-     height: 100vh;
-     width: 99vw;
-     background: rgba(0, 0, 0, 0.4);
- }
-
- .cardconfirmacao {
-     z-index: 0;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-direction: column;
-     padding: 20px;
-     gap: 8px;
-     max-width: 530px;
-     width: 85%;
-     background: rgba(255, 255, 255, 0.98);
-     border-radius: 20px;
-     box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
-     overflow: hidden;
-     transition: all 0.2s ease;
- }
-
- .cardconfirmacao h4 {
-     color: #343638;
- }
-
- .valor {
-     color: #278868;
-     font-weight: bold;
- }
-
- .destino {
-     color: #3b82f6;
-     font-weight: bold;
- }
-
- .confirmar button {
-     flex: 2;
-     padding: 10px;
-     font-weight: 700;
-     font-size: 0.9rem;
-     border: none;
-     border-radius: 1rem;
-     background: #f1f5f9;
-     color: #1e293b;
-     cursor: pointer;
-     transition: 0.2s;
-     gap: 10px;
-     transition-property: background-color;
-     transition-duration: 0.5s;
- }
-
- #nao:hover {
-     color: #fff;
-     background-color: #ff867d;
- }
-
- #sim:hover {
-     color: #fff;
-     background-color: #6fa9ff;
- }
-
- /* cabeçalho */
- .nav-header {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 1.5rem 1.8rem 0.5rem 1.8rem;
- }
-
- .nav-tabs {
-     display: flex;
-     gap: 1.5rem;
- }
-
- .nav-tabs span {
-     font-weight: 600;
-     font-size: 1rem;
-     color: #8f9bb3;
-     cursor: default;
- }
-
- .nav-tabs span.active {
-     color: #1e2a3e;
-     border-bottom: 2.5px solid #2463eb;
-     padding-bottom: 0.25rem;
- }
-
- .profile-icon img {
-     width: 52px;
-     height: 52px;
-     border-radius: 100%;
-     object-fit: cover;
- }
-
- h1 {
-     font-size: 1.35rem;
-     font-weight: 600;
-     padding: 0 1.8rem;
-     margin: 0.5rem 0 0.25rem 0;
-     color: #1e293b;
- }
-
- /* Área do saldo  */
- .saldo-area {
-     background: linear-gradient(135deg, #10182f 0%, #1b2a44 100%);
-     margin: 1rem 1.5rem 1.5rem 1.5rem;
-     padding: 1.6rem 1.8rem;
-     border-radius: 1.8rem;
-     color: white;
-     box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.3);
- }
-
- .saldo-area p:first-child {
-     font-size: 0.85rem;
-     font-weight: 500;
-     text-transform: uppercase;
-     opacity: 0.75;
-     margin-bottom: 0.4rem;
- }
-
- #saldo {
-     font-size: 2.6rem;
-     font-weight: 700;
-     margin: 0.2rem 0 0.3rem 0;
-     letter-spacing: -1px;
- }
-
- #status {
-     font-size: 0.75rem;
-     background: rgba(255, 255, 240, 0.15);
-     display: inline-block;
-     padding: 0.25rem 0.75rem;
-     border-radius: 30px;
-     font-weight: 500;
- }
-
- /* input valor */
- .valor-input {
-     margin: 0 1.5rem 1rem 1.5rem;
- }
-
- #valor {
-     width: 100%;
-     padding: 1rem 1.2rem;
-     font-size: 1.1rem;
-     font-weight: 500;
-     border: 1.5px solid #e2e8f0;
-     border-radius: 1.5rem;
-     background: #ffffff;
-     transition: 0.2s;
-     outline: none;
-     color: #0f172a;
- }
-
- #destinatario:focus {
-     border-color: #2463eb;
-     box-shadow: 0 0 0 3px rgba(36, 99, 235, 0.15);
- }
-
- #destinatario {
-     width: 100%;
-     padding: 1rem 1.2rem;
-     font-size: 1.1rem;
-     font-weight: 500;
-     border: 1.5px solid #e2e8f0;
-     border-radius: 1.5rem;
-     background: #ffffff;
-     transition: 0.2s;
-     outline: none;
-     color: #0f172a;
- }
-
- #valor:focus {
-     border-color: #2463eb;
-     box-shadow: 0 0 0 3px rgba(36, 99, 235, 0.15);
- }
-
- /* grupo de botões */
- .botoes {
-     display: flex;
-     gap: 0.8rem;
-     margin: 0 1.5rem 1rem 1.5rem;
-     flex-wrap: wrap;
- }
-
- .botoes button {
-     flex: 1;
-     padding: 0.85rem 0;
-     font-weight: 700;
-     font-size: 0.9rem;
-     border: none;
-     border-radius: 2rem;
-     background: #f1f5f9;
-     color: #1e293b;
-     cursor: pointer;
-     transition: 0.2s;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     gap: 8px;
- }
-
- .botoes button i {
-     font-size: 1rem;
- }
-
- #depositar {
-     background: #dcfce7;
-     color: #15803d;
- }
-
- #depositar:hover {
-     background: #bbf7d0;
-     transform: translateY(-2px);
- }
-
- #sacar {
-     background: #ffe4e2;
-     color: #b91c1c;
- }
-
- #sacar:hover {
-     background: #ffcdc9;
-     transform: translateY(-2px);
- }
-
- #Transferir {
-     background: #e0e7ff;
-     color: #1e40af;
- }
-
- #Transferir:hover {
-     background: #cbdffc;
-     transform: translateY(-2px);
- }
-
- /* select de usuários */
- .select-transfer {
-     margin: 0 1.5rem 1rem 1.5rem;
- }
-
- #select {
-     width: 100%;
-     padding: 0.85rem 1rem;
-     border-radius: 1.5rem;
-     border: 1.5px solid #e2e8f0;
-     background: white;
-     font-weight: 500;
-     color: #0f172a;
-     outline: none;
-     cursor: pointer;
- }
-
- /* Área de transações  */
- .transactions-header {
-     display: flex;
-     justify-content: space-between;
-     align-items: baseline;
-     margin: 0.8rem 1.5rem 0.8rem 1.5rem;
- }
-
- .transactions-header h3 {
-     font-size: 1rem;
-     font-weight: 700;
-     color: #0f172a;
- }
-
- .profile-transfer h3 {
-     text-align: center;
-     font-size: 1rem;
-     font-weight: 700;
-     color: #0f172a;
- }
-
- .profile-transfer {
-     padding: 12px;
- }
-
- .accounts {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin: 0.8rem 2rem 0.8rem 1.5rem;
-     gap: 15px;
- }
-
- .contact-item {
-     cursor: pointer;
-     border: none;
-     background-color: #ffffff00;
-     transition-property: transform;
-     transition-duration: 0.5s;
-     transform: scale(1);
- }
-
- .contact-item:hover {
-     transition-property: transform;
-     transition-duration: 0.5s;
-     transform: scale(1.030);
- }
-
- .contact-info {
-     display: flex;
-     flex-direction: column;
- }
-
- .contact-info span {
-     color: #4d535c;
-     font-size: 10px;
- }
-
- /* Lista de transações */
- .transaction-list {
-     background: #ffffff;
-     margin: 0 1rem 1.5rem 1rem;
-     border-radius: 1.5rem;
-     padding: 0.25rem 0;
- }
-
- #mensagem {
-     list-style: none;
-     display: flex;
-     flex-direction: column;
-     gap: 0.25rem;
- }
-
- .transaction-item {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 1rem 1.2rem;
-     background: #ffffff;
-     border-radius: 1.2rem;
-     border-bottom: 1px solid #f0f2f5;
- }
-
- .transaction-left {
-     display: flex;
-     flex-direction: column;
-     gap: 4px;
- }
-
- .trans-desc {
-     font-weight: 600;
-     font-size: 0.95rem;
-     color: #1e293b;
- }
-
- .trans-time {
-     font-size: 0.7rem;
-     color: #7c8ba0;
-     font-weight: 500;
- }
-
- .trans-amount {
-     font-weight: 700;
-     font-size: 1.1rem;
-     letter-spacing: -0.3px;
- }
-
- .positive-amount {
-     color: #10b981;
- }
-
- .negative-amount {
-     color: #ef4444;
- }
-
- .empty-transactions {
-     text-align: center;
-     padding: 2rem;
-     color: #94a3b8;
-     font-size: 0.85rem;
- }
-
- footer {
-     text-align: center;
-     font-size: 0.65rem;
-     color: #8a99b0;
-     padding: 1rem 1rem 1.5rem;
-     border-top: 1px solid #ecf3fa;
-     margin-top: 0.25rem;
- }
-
- button:active {
-     transform: scale(0.97);
- }
-
- @media (max-width: 480px) {
-     .container {
-         border-radius: 1.8rem;
-     }
-
-     #saldo {
-         font-size: 2rem;
-     }
-
-     .botoes button {
-         font-size: 0.8rem;
-         padding: 0.7rem 0;
-     }
- }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --green-dark:    #1d4a2f;
+    --green-mid:     #2d6e42;
+    --green-light:   #e8f0e8;
+    --green-xlight:  #f5faf5;
+    --white:         #ffffff;
+    --bg-page:       #f0f2f0;
+    --border:        #e8ece8;
+    --text-primary:  #111111;
+    --text-muted:    #888888;
+    --text-hint:     #aaaaaa;
+    --red:           #e74c3c;
+    --positive:      #1a7a3c;
+    --radius-sm:     8px;
+    --radius-md:     12px;
+    --radius-lg:     16px;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   MODAL LOGIN
+   ============================================================ */
+.cardLogin{
+    display: flex;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 98vh;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    justify-content: center;
+}
+.cardRegister{
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 98vh;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    justify-content: center;
+}
+
+.cardLogin.active,
+.cardRegister.active {
+    display: flex;
+}
+
+.cardLogin form,
+.cardRegister form {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 400px;
+    border: 0.5px solid var(--border);
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--green-dark);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.field {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    fill: #9aaa9a;
+    pointer-events: none;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.6rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    color: var(--text-primary);
+    background: var(--green-xlight);
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+
+.input-field:focus {
+    border-color: var(--green-dark);
+    background: var(--white);
+}
+
+.input-field::placeholder {
+    color: #aab;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+    font-family: inherit;
+    margin-top: 0.5rem;
+}
+
+.btnlogin,
+.btnRegister {
+    background: var(--green-dark);
+    color: var(--white);
+}
+
+.btnlogin:hover,
+.btnRegister:hover {
+    opacity: 0.88;
+}
+
+.btnlogin:active,
+.btnRegister:active {
+    transform: scale(0.98);
+}
+
+.btn-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 13px;
+    color: var(--green-dark);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+.msgError {
+    display: block;
+    font-size: 12px;
+    color: var(--red);
+    min-height: 18px;
+    margin-top: 0.4rem;
+    text-align: center;
+}
+
+
+/* ============================================================
+   MODAL REGISTRO BEM SUCEDIDO
+   ============================================================ */
+.registroCard {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    justify-content: center;
+}
+
+.registroCard.active {
+    display: flex;
+}
+
+.cardMSG {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    max-width: 380px;
+    width: 90%;
+    border: 0.5px solid var(--border);
+}
+
+.sucessoLogo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.msg h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.msg h4 {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.removerModalSucesso {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.15s;
+}
+
+.removerModalSucesso:hover {
+    opacity: 1;
+}
+
+.removerModalSucesso img {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* ============================================================
+   DASHBOARD LAYOUT
+   ============================================================ */
+.container {
+    display: none;
+    min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    width: 72px;
+    background: var(--green-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0;
+    gap: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
+}
+
+.sidebar-logo {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.sidebar-logo svg {
+    width: 22px;
+    height: 22px;
+    fill: var(--white);
+}
+
+.nav-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-item {
+    width: 52px;
+    padding: 10px 0;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    transition: background 0.15s;
+}
+
+.nav-item.active {
+    background: var(--green-mid);
+}
+
+.nav-item svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--white);
+    opacity: 0.7;
+}
+
+.nav-item.active svg {
+    opacity: 1;
+}
+
+.nav-item span {
+    font-size: 10px;
+    color: var(--white);
+    opacity: 0.7;
+    font-family: inherit;
+}
+
+.nav-item.active span {
+    opacity: 1;
+}
+
+.sidebar-spacer {
+    flex: 1;
+}
+
+.sidebar-logout {
+    width: 52px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 8px;
+    opacity: 0.6;
+    transition: opacity 0.15s;
+}
+
+.sidebar-logout:hover {
+    opacity: 1;
+}
+
+.sidebar-logout svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--white);
+}
+
+/* --- Main content --- */
+.main-content {
+    flex: 1;
+    margin-left: 72px;
+    padding: 24px 28px;
+    width: 100%;
+    max-width: 960px;
+}
+
+
+/* ============================================================
+   TOPBAR / NAV-HEADER
+   ============================================================ */
+.nav-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.search-box {
+    flex: 1;
+    max-width: 360px;
+    position: relative;
+}
+
+.search-box svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    fill: #aaa;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 16px 8px 36px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 13px;
+    background: var(--white);
+    outline: none;
+    color: var(--text-primary);
+    font-family: inherit;
+}
+
+.search-input:focus {
+    border-color: var(--green-dark);
+}
+
+.nav-header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.bell-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.bell-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #555;
+}
+
+.notif-dot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    border: 1.5px solid var(--bg-page);
+}
+
+.nav-header .profile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #c8d8c8;
+}
+
+.nav-header .profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ============================================================
+   SALDO
+   ============================================================ */
+.saldo-area {
+    margin-bottom: 28px;
+}
+
+.saldo-area p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.saldo-area h2 {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}
+
+#status {
+    font-size: 13px;
+    color: var(--text-hint);
+    margin-top: 4px;
+}
+
+
+/* ============================================================
+   ACTION CARDS (Deposit / Transfer / Withdraw)
+   ============================================================ */
+.action-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.action-card {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.action-card:hover {
+    background: var(--green-xlight);
+}
+
+.action-icon svg {
+    width: 42px;
+    height: 42px;
+    fill: var(--green-dark);
+}
+
+.action-card span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--green-dark);
+}
+
+
+/* ============================================================
+   INPUTS DE VALOR
+   ============================================================ */
+.valor-input {
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.valor-input input {
+    flex: 1;
+    padding: 9px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--text-primary);
+    background: var(--white);
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.valor-input input:focus {
+    border-color: var(--green-dark);
+}
+
+
+/* ============================================================
+   BOTÕES PRINCIPAIS
+   ============================================================ */
+.botoes {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.botoes button {
+    flex: 1;
+    padding: 9px 0;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+    font-family: inherit;
+}
+
+.botoes button:hover {
+    opacity: 0.85;
+}
+
+.botoes button:active {
+    transform: scale(0.98);
+}
+
+#depositar {
+    background: var(--green-dark);
+    color: var(--white);
+}
+
+#sacar {
+    background: var(--green-light);
+    color: var(--green-dark);
+}
+
+#Transferir {
+    background: var(--green-light);
+    color: var(--green-dark);
+}
+
+
+/* ============================================================
+   MODAL DE CONFIRMAÇÃO
+   ============================================================ */
+#sectionConfirm {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cardconfirmacao {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-md);
+    width: 400px;
+    padding: 20px;
+}
+
+.cardconfirmacao h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+#msgConfirm {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.confirmar {
+    display: flex;
+    gap: 10px;
+}
+
+#nao {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    transition: background 0.15s;
+}
+
+#nao:hover {
+    background: var(--bg-page);
+}
+
+#sim {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--green-dark);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    transition: opacity 0.15s;
+}
+
+#sim:hover {
+    opacity: 0.88;
+}
+
+
+/* ============================================================
+   TRANSFERIR NOVAMENTE
+   ============================================================ */
+.profile-transfer {
+    margin-bottom: 28px;
+}
+
+.profile-transfer h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+}
+
+.accounts {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-family: inherit;
+}
+
+.contact-item:hover {
+    background: var(--green-xlight);
+}
+
+.contact-item .profile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #c8d8c8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--green-dark);
+    flex-shrink: 0;
+}
+
+.contact-item .profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info strong {
+    display: block;
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.contact-info span {
+    font-size: 11px;
+    color: var(--text-hint);
+}
+
+
+/* ============================================================
+   ÚLTIMAS TRANSAÇÕES
+   ============================================================ */
+.transactions-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.transactions-header h3 {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.see-all {
+    font-size: 13px;
+    color: var(--green-dark);
+    cursor: pointer;
+}
+
+.transaction-list ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.transaction-list ul li {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.transaction-list ul li .tx-amount-pos {
+    margin-left: auto;
+    color: var(--positive);
+    font-weight: 500;
+}
+
+.transaction-list ul li .tx-amount-neg {
+    margin-left: auto;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+    margin-top: 32px;
+    padding-bottom: 16px;
+    font-size: 12px;
+    color: var(--text-hint);
+    text-align: center;
+}
+
+/*============================================================
+  MEDIAQ
+  ============================================================*/
+
+@media (max-width: 768px) {
+
+    /* Sidebar vira topo */
+    .sidebar {
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        padding: 8px;
+    }
+
+    .sidebar-logo {
+        display: none;
+    }
+
+    .nav-tabs {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .nav-item {
+        width: auto;
+        padding: 6px 10px;
+    }
+
+    .sidebar-logout {
+        display: none;
+    }
+
+    /* Ajuste do conteúdo principal */
+    .main-content {
+        margin-left: 0;
+        padding: 16px;
+        margin-bottom: 70px; /* espaço pra sidebar */
+    }
+
+    /* Topbar */
+    .nav-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Saldo */
+    .saldo-area h2 {
+        font-size: 24px;
+    }
+
+    /* Cards (vira 1 coluna) */
+    .action-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Botões */
+    .botoes {
+        flex-direction: column;
+    }
+
+    /* Transferências */
+    .accounts {
+        flex-direction: column;
+
+    }
+
+    .contact-item {
+        width: 100%;
+    }
+
+    /* Transações */
+    .tx-amount-pos,
+    .tx-amount-neg {
+        margin-left: 0;
+    }
+}

@@ -95,11 +95,11 @@ let userLogin
 
 function openModalRegister() {
     cardLogin.style.display = 'none'
-    cardRegister.style.display = 'block'
+    cardRegister.style.display = 'flex'
 }
 
 function openModallogin() {
-    cardLogin.style.display = 'block'
+    cardLogin.style.display = 'flex'
     cardRegister.style.display = 'none'
 }
 
