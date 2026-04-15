@@ -6,7 +6,7 @@ Aplicação de simulador bancário desenvolvida com HTML, CSS e JavaScript puro,
 
 * **Depósitos e Saques:** Atualização de saldo em tempo real.
 * **Transferências:** Envio de valores entre diferentes instâncias de contas (Ex: Pedro para Maria).
-* **Histórico Dinâmico:** Registro das últimas 4 transações com horário detalhado.
+* **Histórico Dinâmico:** Registro das últimas 3 transações com horário detalhado.
 * **Validação de Saldo:** Impede saques ou transferências maiores que o saldo disponível.
 * **Status de Conta:** Alerta visual quando a conta está zerada.
 * **Login e Cadastro:** Sistema de autenticação com validação de campos e verificação de usuário existente.
@@ -23,9 +23,7 @@ Aplicação de simulador bancário desenvolvida com HTML, CSS e JavaScript puro,
 ## 🎥 Demonstração
 
 
-<img width="661" height="851" alt="Image" src="https://github.com/user-attachments/assets/ffc77b09-442d-44c1-a16e-90242f1c404f" />
-<img width="661" height="851" alt="Image" src="https://github.com/user-attachments/assets/78bb7fbc-cbba-4081-8c70-1abbad68e338" />
-<img width="661" height="851" alt="Image" src="https://github.com/user-attachments/assets/dc865f0a-3250-479a-956f-e1983dd42655" />
+<img width="661" height="851" alt="Image" src="https://github.com/user-attachments/assets/65d59b9d-3dee-4d9b-a3be-7e3e3f6c91f0" />
 
 
 ## 🔗 Acesse o projeto
